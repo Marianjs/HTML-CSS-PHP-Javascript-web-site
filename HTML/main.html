@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'> <!--imagini iconite meniu-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--fontul folosit-->
+    <link rel="stylesheet" href="main_styles.css"> <!--CSS styles-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"> <!--pentru eye icon-->
+    <script src="login.js"></script> <!--cod JavaScript pentru validare nume si parola-->
+    <title>Acasa</title>
+</head>
+<body>
+    <div class="sidebar"> <!--meniul-->
+        <div class="logo_content"> <!--logo-->
+            <div class="logo">
+                <i class='bx bxs-dog'></i>
+                <div class="logo_name">PetShop</div>
+            </div>
+            <i class='bx bx-menu' id = "btn"></i>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <a href="locatie.html">
+                    <i class='bx bx-map' id="locatie" ></i> <!--link locatia magazinului-->
+                    <span class="links_name">Locatie</span>
+                </a>
+                <span class="tooltip">Locatie</span>
+            </li>
+            <li>
+                <a href="facebook.html">
+                    <i class="fa fa-facebook" aria-hidden="true"></i><!--link facebook magazin-->
+                    <span class="links_name">Facebook</span>
+                </a>
+                <span class="tooltip">Facebook</span>
+            </li>
+            <li>
+                <a href="instagram.html">
+                    <i class="fa fa-instagram" id ="inst"></i> <!--link instagram magazin-->
+                    <span class="links_name">Instagram</span>
+                </a>
+                <span class="tooltip">Instagram</span>
+            </li>
+            <li>
+                <a href="twitter.html">
+                    <i class="fa fa-twitter" id="twitter"></i> <!--link twitter magazin-->
+                    <span class="links_name">Twitter</span>
+                </a>
+                <span class="tooltip">Twitter</span>
+            </li>
+            <li>
+                <a href="support.html">
+                    <i class="fa fa-envelope" id="support"></i> <!--link ajutor/probleme tehnice-->
+                    <span class="links_name">Support</span>
+                </a>
+                <span class="tooltip">Support</span>
+            </li>
+        </ul>
+    </div>
+    <div class="home_content"> <!--continut prima pagina-->
+        <div class="popup">
+            <div class="form">
+                <h2>Administrare</h2>
+                <div class="form-element">
+                    <label for="Nume">Nume</label>
+                    <input type="text" id="nume" placeholder="Introduceti numele">
+                </div>
+                <div class="form-element">
+                    <label for="Parola">Parola</label>
+                    <input type="password" id="parola" placeholder="Introduceti parola">
+                    <span class="eye" onclick="showHide()">
+                        <i id="hide" class="fa fa-eye"></i>
+                    </span>
+                </div>
+                <div class="form-element">
+                    <input type="submit" id="submit" value="Log In" onclick="validate()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script> /*cod JavaScript pentru animatie bara cu meniuri*/
+        let btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar");
+        
+        btn.onclick = function() {
+            sidebar.classList.toggle("active");
+        }
+    </script>
+
+    <script type="text/javascript"> /*cod JavaScript pentru password eye icon*/
+        const password = document.getElementById('parola');
+        const toggle = document.getElementById('hide');
+        function showHide() {
+            if(password.type === 'password') {
+                password.setAttribute('type', 'text');
+                toggle.classList.add('hide');
+            }
+            else {
+                password.setAttribute('type', 'password');
+                toggle.classList.remove('hide');
+            }
+        }
+    </script>
+</body>
+</html>

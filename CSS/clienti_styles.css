@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Raleway&display=swap'); /*fontul folosit*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    background: #11101d;
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active {
+    width: 209px;
+}
+
+.sidebar .logo_content .logo {
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.active .logo_content .logo {
+    opacity: 1;
+    pointer-events: none;
+}
+
+.logo_content .logo i {
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.logo_content .logo .logo_name {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.sidebar #btn {
+    position: absolute;
+    color: #fff;
+    left: 61.5%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-57%);
+}
+
+.sidebar.active #btn {
+    left: 90%;
+}
+
+.sidebar ul {
+    margin-top: 30px;
+}
+
+.sidebar ul li {
+    list-style: none;
+    height: 50px;
+    width: 102%;
+    position: relative;
+    margin: 0 5px;
+    line-height: 50px;
+    border-radius: 12px;
+}
+
+.sidebar .links_name {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.active .links_name {
+    opacity: 1;
+    pointer-events: auto;
+
+}
+
+.sidebar ul li .tooltip {
+    position: absolute;
+    height: 35px;
+    width: 140px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    left: 130px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    line-height: 35px;
+    text-align: center;
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+}
+
+.sidebar.active ul li .tooltip {
+    display: none;
+}
+
+.sidebar ul li:hover .tooltip {
+    transition: all 0.5s ease;
+    top: 50%;
+    opacity: 1;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.sidebar ul li a:hover {
+    color: #11101d;
+    background: #fff;
+    bottom: 0;
+    left: 0;
+}
+
+.sidebar ul li a i {
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    padding: 20px 30px;
+    background: #11101d;
+    border-radius: 10px;
+}
+
+.popup .form h2 {
+    text-align: center;
+    color: #fff;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+}
+
+.popup .form .form-element {
+    margin: 15px 0;
+}
+
+.popup .form .form-element label {
+    font-size: 14px;
+    color: #fff;
+}
+
+#nume, #parola {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+#submit {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #fff;
+    padding: 10px 30px;
+    outline: none;
+    color: #fff;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.content {
+    position: absolute;
+    height: 270px;
+    overflow: auto;
+    left: 18%;
+    top: 2%;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #bdc3c7;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content thead tr {
+    background-color: #11101d;
+    color: #fff;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    transition: all .2s ease-in;
+    cursor: pointer;
+    text-align: left;
+}
+
+th, td {
+    padding: 0px 8px;
+    /*border: 1px solid #11101d;*/
+}
+
+tbody:hover {
+    background-color: #f5f5f5;
+    transform: scale(1.00);
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.buttons {
+    text-align: center;
+    margin-top: 300px;
+    position: absolute;
+    left: 30%;
+}
+
+.btn {
+    font-size: 18px;
+    background: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    position: relative;
+    margin: 10px;
+    min-width: 200px;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    color: #fff;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #11101d;
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.7, 0.4, 0.7);
+}
+
+.btn1::before, .btn2::before, .btn3::before {
+    transform: scaleX(0);
+}
+
+.btn1:hover::before, .btn2:hover::before, .btn3:hover::before {
+    transform: scaleX(1);
+}
+
+#insert-form {
+    display: none;
+}
+
+#update-form {
+    display: none;
+}
+
+#delete-form {
+    display: none;
+}
+
+.box {
+    padding: 17px;
+    position: absolute;
+    top: 74%;
+    left: 51.6%;
+    transform: translate(-50%,-50%);
+    background: #11101d;
+    text-align: center;
+    width: 40%;
+}
+
+::placeholder {
+    color: #fff;
+}
+
+.box #cautare {
+    width: 40%;
+    overflow: hidden;
+    font-size: 14px;
+    padding: 8px 0;
+    border: 1px solid #ffffff;
+    background: none;
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    outline: none;
+}
+
+.box #modificare {
+    border: 0;
+    background: none;
+    display: inline;
+    margin: 7px auto;
+    text-align: center;
+    border: 2px solid #ffffff;
+    padding: 14px 10px;
+    outline: none;
+    color: #fff;
+    border-radius: 15px;
+    transition: 0.25s;
+}
+
+.box input[type="text"] {
+    border: 0;
+    background: none;
+    display: inline;
+    margin: 7px auto;
+    text-align: center;
+    border: 2px solid #ffffff;
+    padding: 14px 10px;
+    outline: none;
+    color: #fff;
+    transition: 0.25s;
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 7px auto;
+    text-align: center;
+    border: 2px solid #ffffff;
+    padding: 14px 50px;
+    outline: none;
+    color: #ffffff;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.box #insert {
+    border-radius: 15px;
+}
+
+.box #stergere {
+    width: 40%;
+    border: 1px solid #fff;
+}
+
+#update-form .box {
+    position: absolute;
+    top: 72.2%;
+}
+
+#delete-form .box {
+    position: absolute;
+    top: 60.8%;
+}
+
+#stergere {
+    padding: 10px
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar {
+    background: linear-gradient(transparent, #fff);
+    border-radius: 6px;
+}
+
+.number {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: none;
+    right: -9%;
+    top: 17%;
+}
+
+.number .text {
+    color: #11101d;
+}

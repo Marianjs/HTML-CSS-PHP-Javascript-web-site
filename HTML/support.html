@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="support_styles.css">
+    <script src="login.js"></script>
+    <title>Support</title>
+</head>
+<body>
+    <div class="sidebar"> <!--meniul-->
+        <div class="logo_content"> <!--logo-->
+            <div class="logo">
+                <i class='bx bxs-dog'></i>
+                <div class="logo_name">PetShop</div>
+            </div>
+            <i class='bx bx-menu' id = "btn"></i>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <a href="main.html">
+                    <i class='bx bx-home' id="acasa"></i> <!--acasa-->
+                    <span class="links_name">Acasa</span>
+                </a>
+                <span class="tooltip">Acasa</span>
+            </li>
+            <li>
+                <a href="locatie.html">
+                    <i class='bx bx-map' id="locatie" ></i> <!--link locatia magazinului-->
+                    <span class="links_name">Locatie</span>
+                </a>
+                <span class="tooltip">Locatie</span>
+            </li>
+            <li>
+                <a href="facebook.html">
+                    <i class="fa fa-facebook-f" id="facebook"></i> <!--link facebook magazin-->
+                    <span class="links_name">Facebook</span>
+                </a>
+                <span class="tooltip">Facebook</span>
+            </li>
+            <li>
+                <a href="instagram.html">
+                    <i class="fa fa-instagram" id ="inst"></i> <!--link instagram magazin-->
+                    <span class="links_name">Instagram</span>
+                </a>
+                <span class="tooltip">Instagram</span>
+            </li>
+            <li>
+                <a href="twitter.html">
+                    <i class="fa fa-twitter" id="twitter"></i> <!--link twitter magazin-->
+                    <span class="links_name">Twitter</span>
+                </a>
+                <span class="tooltip">Twitter</span>
+            </li>
+            <li>
+                <a href="support.html">
+                    <i class="fa fa-envelope" id="support"></i> <!--link ajutor/probleme tehnice-->
+                    <span class="links_name">Support</span>
+                </a>
+                <span class="tooltip">Support</span>
+            </li>
+        </ul>
+    </div>
+    <div class="home_content"> <!--continut prima pagina-->
+        <div class="text">Pentru orice problema, contactati-ne la marian.nastasa@stud.acs.upb.ro</div>
+    </div>
+    <script> /*cod JavaScript pentru animatie bara cu meniuri*/
+        let btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar");
+        
+        btn.onclick = function() {
+            sidebar.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
